@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#delete'
   get '/signup', to: 'users#new'
   resources :reviews
   resources :beers
