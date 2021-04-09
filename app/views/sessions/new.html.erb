@@ -1,0 +1,6 @@
+<h1>Login</h1>
+
+<%= form_for @user, url: '/login' do |f| %>
+    <%= render partial: 'users/form', locals: {f: f} %>
+    <%= f.submit "Login" %>
+<% end %>
