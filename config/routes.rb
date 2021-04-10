@@ -6,10 +6,13 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#delete'
   get '/signup', to: 'users#new'
   resources :reviews
-  resources :beers
+  resources :beers do
+    resources :reviews, only: [:index, :new, :edit]
+  end
   resources :breweries
   resources :users, only: [:show, :create] do
     resources :beers, only: [:index, :show]
+    resources :reviews, only: [:index, :edit]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
