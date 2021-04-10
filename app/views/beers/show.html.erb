@@ -1,1 +1,18 @@
-<h1><%= @beer.name %></h1>
+<h2><%= @beer.name %></h2>
+<p>
+    Brewed by: <%= @beer.brewery.name %><br>
+    Style: <%= @beer.style %><br>
+    ABV: <%= @beer.abv %><br>
+    IBU: <%= @beer.ibu %>
+</p>
+
+<h3>Reviews</h3>
+<div>
+    <% recent_reviews(@beer).each do |review| %>
+    <p>
+        <%= review.user.username %><br>
+        Rating: <%= review.rating %><br>
+        <%= review.comment %>
+    </p>
+    <% end %>
+</div>
