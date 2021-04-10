@@ -1,0 +1,30 @@
+<h1>Add a Beer</h1>
+
+<%= form_for @beer do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+
+    <%= f.label :style %>
+    <%= f.text_field :style %><br>
+
+    <%= f.label :abv %>
+    <%= f.number_field :abv, step: :any %><br>
+
+    <%= f.label :ibu %>
+    <%= f.number_field :ibu %><br>
+
+    <%= f.label :brewery %>
+    <%= f.text_field :brewery %><br>
+
+    <%= f.fields_for :reviews do |r| %>
+        <%= r.hidden_field :user_id, value: @user.id %>
+
+        <%= r.label :rating, "Rating (0-100)" %>
+        <%= r.number_field :rating, min: 0, max: 100 %><br>
+
+        <%= r.label :comment %>
+        <%= r.text_area :comment %><br>
+    <% end %>
+
+    <%= f.submit "Add Beer" %>
+<% end %>
