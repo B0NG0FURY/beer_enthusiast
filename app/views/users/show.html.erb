@@ -1,5 +1,9 @@
 <h1>Welcome, <%= @user.username %></h1>
 
+<%= link_to "Your Beers", user_beers_path(@user) %>
+<%= link_to "Explore Beers", beers_path %>
+<%= link_to "Add A New Beer", new_beer_path %>
+
 <footer>
     <%= link_to "Logout", logout_path %>
 </footer>
