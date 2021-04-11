@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
             @beer = Beer.find_by_id(params[:beer_id])
             @review = Review.new
         else
-            redirect_to beer_path(@beer)
+            redirect_to beer_path(params[:beer_id])
         end
     end
 

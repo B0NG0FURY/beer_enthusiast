@@ -10,15 +10,7 @@
 <h3>Reviews</h3>
 <div>
     <% recent_reviews(@beer).each do |review| %>
-    <p>
-        <%= review.user.username %><br>
-        Rating: <%= review.rating %><br>
-        <%= review.comment %>
-        <% if review.user == current_user %>
-            <br>
-            <%= link_to "Edit Review", edit_beer_review_path(@beer, review) %>
-        <% end %>
-    </p>
+        <%= render partial: 'reviews/review', locals: {review: review} %>
     <% end %>
     <%= link_to "All Reviews", beer_reviews_path(@beer) %>
 </div>
