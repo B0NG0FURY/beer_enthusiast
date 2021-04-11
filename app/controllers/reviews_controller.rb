@@ -30,6 +30,16 @@ class ReviewsController < ApplicationController
 
     def edit
         @review = Review.find_by_id(params[:id])
+        redirect_to root_path if current_user != @review.user
+    end
+
+    def update
+        @review = Review.find_by_id(params[:id])
+        if @review.update(review_params)
+            redirect_to beer_path(@review.beer)
+        else
+            render "edit"
+        end
     end
 
     private
