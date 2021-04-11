@@ -19,7 +19,22 @@ class ReviewsController < ApplicationController
         end
     end
 
+    def create
+        @review = Review.new(review_params)
+        if @review.save
+            redirect_to beer_path(@review.beer)
+        else
+            render "new"
+        end
+    end
+
     def edit
         @review = Review.find_by_id(params[:id])
+    end
+
+    private
+
+    def review_params
+        params.require(:review).permit(:user_id, :beer_id, :rating, :comment)
     end
 end
