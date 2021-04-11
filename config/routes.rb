@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#delete'
   get '/signup', to: 'users#new'
-  resources :reviews
+  resources :reviews, only: [:create, :update]
   resources :beers do
     resources :reviews, only: [:index, :new, :edit]
   end

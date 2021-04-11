@@ -5,6 +5,7 @@
     ABV: <%= @beer.abv %><br>
     IBU: <%= @beer.ibu %>
 </p>
+<%= link_to "Review this beer", new_beer_review_path(@beer) %>
 
 <h3>Reviews</h3>
 <div>
