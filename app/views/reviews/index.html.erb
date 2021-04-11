@@ -1,1 +1,9 @@
-<h1>Reviews</h1>
+<% if @user %>
+    <h1><%= @user.username %>'s Reviews</h1>
+<% elsif @beer %>
+    <h1>Reviews for <%= @beer.name %></h1>
+<% end %>
+
+<% @reviews.reverse.each do |review| %>
+    <%= render partial: 'review', locals: {review: review} %>
+<% end %>

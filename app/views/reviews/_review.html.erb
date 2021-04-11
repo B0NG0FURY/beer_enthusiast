@@ -1,0 +1,13 @@
+<p>
+    <% if @beer %>
+        <%= review.user.username %><br>
+    <% elsif @user %>
+        Beer: <%= link_to review.beer.name, beer_path(review.beer) %><br>
+    <% end %>
+    Rating: <%= review.rating %><br>
+    <%= review.comment %>
+    <% if review.user == current_user %>
+        <br>
+        <%= link_to "Edit Review", edit_beer_review_path(review.beer, review) %>
+    <% end %>
+</p>
