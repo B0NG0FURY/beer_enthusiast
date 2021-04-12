@@ -1,4 +1,12 @@
 class BeersController < ApplicationController
+    def index
+        if params[:user_id]
+            @user = User.find_by_id(params[:user_id])
+            @reviews = sort_reviews_by(@user, beer)
+        else
+            @beers = Beer.all.sort_by {|beer| beer.name}
+        end
+    end
 
     def new
         redirect_to root_path if !current_user

@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
     def logged_in?
         !!session[:user_id]
     end
+
+    def sort_reviews_by(owner, type)
+        owner.reviews.sort_by {|review| review.type}
+    end
 end
