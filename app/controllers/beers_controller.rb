@@ -2,9 +2,9 @@ class BeersController < ApplicationController
     def index
         if params[:user_id]
             @user = User.find_by_id(params[:user_id])
-            @reviews = sort_reviews_by(@user, beer)
+            @beers = @user.beers
         else
-            @beers = Beer.all.sort_by {|beer| beer.name}
+            @beers = Beer.all
         end
     end
 

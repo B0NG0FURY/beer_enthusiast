@@ -6,8 +6,10 @@ class Beer < ApplicationRecord
     accepts_nested_attributes_for :reviews
 
     def average_rating
-       ratings = self.reviews.map {|review| review.rating}
-       average = ratings.sum / ratings.count
-       average.round
+       if !self.reviews.empty?
+        ratings = self.reviews.map {|review| review.rating}
+        average = ratings.sum / ratings.count
+        average.round
+       end
     end
 end
