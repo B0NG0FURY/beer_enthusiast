@@ -3,7 +3,12 @@
     <%= @brewery.location %>
 </p>
 
-<h3>Beers</h3>
+<h3>
+    Beers
+    <% if @user %>
+        tried
+    <%end %>
+</h3>
 
 <% sort_beers_by_name(@beers).each do |beer| %>
     <%= render partial: "beers/beer", locals: {beer: beer} %>

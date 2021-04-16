@@ -1,4 +1,9 @@
-<h1>Breweries</h1>
+<h1>
+    Breweries
+    <% if @user %>
+        <%= @user.username %> has drank beers from
+    <% end %>
+</h1>
 
 
 <% sort_breweries_by_name(@breweries).each do |brewery| %>
