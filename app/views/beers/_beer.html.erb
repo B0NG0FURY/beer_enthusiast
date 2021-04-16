@@ -1,6 +1,8 @@
 <p>
     <strong><%= link_to beer.name, beer_path(beer) %></strong><br>
-    Brewed by: <%= link_to beer.brewery.name, brewery_path(beer.brewery) %><br>
+    <% if !@brewery %>
+        Brewed by: <%= link_to beer.brewery.name, brewery_path(beer.brewery) %><br>
+    <% end %>
     Style: <%= beer.style %><br>
     ABV: <%= beer.abv %><br>
     IBU: <%= beer.ibu %><br>
