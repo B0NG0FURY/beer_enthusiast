@@ -38,3 +38,16 @@ header * {
 header li {  
     margin: 20px;  
 }
+
+header div.navTabs ul.navLeft {
+    float: left;
+}
+
+img.logo-small {
+    margin-left: -28px;
+    margin-top: 3px;
+}
+
+.navTabs .navRight {
+    float: right;
+}

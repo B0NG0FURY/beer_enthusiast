@@ -13,9 +13,15 @@
 
   <body>
     <header>
-      <div class="navTabs">
-        <nav>
+      <nav>
+        <div class="navTabs">
           <ul class="navLeft">
+            <li>
+              <%= image_tag("beermug.jfif", size: "15x15", class: "logo-small") %>
+            </li>
+            <li>
+              <%= link_to "Home", root_path %>
+            </li>
             <li>
               <%= link_to "Beers", beers_path %>
             </li>
@@ -25,8 +31,8 @@
           </ul>
           <ul class="navRight">
           </ul>
-        </nav>
-      </div>
+        </div>
+      </nav>
     </header>
 
     <%= yield %>
