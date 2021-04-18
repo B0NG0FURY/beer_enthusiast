@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>BeerEnthusiast</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +12,23 @@
   </head>
 
   <body>
+    <header>
+      <div class="navTabs">
+        <nav>
+          <ul class="navLeft">
+            <li>
+              <%= link_to "Beers", beers_path %>
+            </li>
+            <li>
+              <%= link_to "Breweries", breweries_path %>
+            </li>
+          </ul>
+          <ul class="navRight">
+          </ul>
+        </nav>
+      </div>
+    </header>
+
     <%= yield %>
   </body>
 </html>
