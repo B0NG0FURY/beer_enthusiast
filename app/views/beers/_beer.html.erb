@@ -9,8 +9,8 @@
 
     <% if @user %>
         Rating: <%= get_review(@user, beer).rating %><br>
-        You Said: <%= get_review(@user, beer).comment %><br>
-        <%= link_to "Edit", edit_user_review_path(@user, get_review(@user, beer)) %>
+        Comment: <%= get_review(@user, beer).comment %><br>
+        <%= link_to "Edit", edit_user_review_path(@user, get_review(@user, beer)) if @user == current_user %>
     <% else %>
         Avg. Rating: <%= beer.average_rating %>
     <% end %>
