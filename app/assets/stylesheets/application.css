@@ -16,7 +16,7 @@
 
 body {
     padding: 20px;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 header {  
@@ -24,7 +24,7 @@ header {
     position: fixed;
     left: 0;  
     right: 0;  
-    top: 5px;  
+    top: 0px;  
     height: 40px;
     width: 100%;
     display: inline-table;
@@ -74,6 +74,11 @@ header nav .navRight {
 
 .image-container img {
     width: 50%;
+}
+
+.image-container > img.user-page {
+    width: 200px;
+    height: 160px;
 }
 
 .nav-grid {

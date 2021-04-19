@@ -1,11 +1,32 @@
 <h1>Welcome, <%= @user.username %></h1>
 
-<%= link_to "Your Beers", user_beers_path(@user) %>
-<%= link_to "Your Breweries", user_breweries_path(@user) %>
-<br><br>
-<%= link_to "Explore Beers", beers_path %>
-<%= link_to "Add A New Beer", new_beer_path %>
+<div class="image-container">
+    <%= image_tag("user-page.jfif", class: "user-page") %>
+</div>
 
-<footer>
-    <%= link_to "Logout", logout_path %>
-</footer>
+<h2>Your Collection</h2>
+<div class="nav-grid">
+    <div>
+        <%= link_to image_tag("collection.jfif"), user_beers_path(@user) %><br>
+        Beers Tried
+    </div>
+    <div>
+        <%= link_to image_tag("account-brewery.jfif", size: "260x225"), user_breweries_path(@user) %><br>
+        Breweries Tried
+    </div>
+</div>
+
+<h2>Explore</h2>
+<div class="nav-grid">
+    <div>
+        <%= link_to image_tag("explore-beers.jfif"), beers_path %><br>
+        Beers
+    </div>
+    <div>
+        <%= link_to image_tag("explore-breweries.jfif", height: "177", width: "284"), breweries_path %><br>
+        Breweries 
+    </div>
+</div>
+
+<br><br>
+<%= link_to "Add A New Beer", new_beer_path %>
