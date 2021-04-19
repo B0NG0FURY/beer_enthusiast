@@ -15,8 +15,8 @@
  */
 
 body {
-    padding: 30px;
-    margin-top: 80px;
+    padding: 20px;
+    margin-top: 50px;
 }
 
 header {  
@@ -74,5 +74,16 @@ header nav .navRight {
 
 .image-container img {
     width: 50%;
+}
+
+.nav-grid {
+    display: inline-grid;
+    grid-gap: 20px;
+    grid-template-columns: auto auto auto;
+}
+
+.nav-grid > div {
+    text-align: center;
+    font-size: 25px;
 }
 

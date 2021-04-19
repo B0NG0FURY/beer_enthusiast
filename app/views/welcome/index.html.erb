@@ -8,6 +8,14 @@
     <%= image_tag("pintglass.jfif", class: "pintglass") %>
 </div>
 
-<p>
-    <%= link_to "Beers", beers_path %>
-</p>
+<h2>Explore</h2>
+<div class="nav-grid">
+    <div>
+        <%= link_to image_tag("explore-beers.jfif"), beers_path %><br>
+        Beers
+    </div>
+    <div>
+        <%= link_to image_tag("explore-breweries.jfif", height: "177", width: "284"), breweries_path %><br>
+        Breweries 
+    </div>
+</div>
