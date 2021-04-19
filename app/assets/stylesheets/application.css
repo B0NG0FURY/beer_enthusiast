@@ -20,13 +20,14 @@ body {
 }
 
 header {  
-    background-color: orange;  
-    position: fixed;  
+    background-color: orange;
+    position: fixed;
     left: 0;  
     right: 0;  
     top: 5px;  
-    height: 30px;  
-    display: flex;  
+    height: 40px;
+    width: 100%;
+    display: inline-table;
     align-items: center;  
     box-shadow: 0 0 25px 0 black;  
 }
@@ -39,15 +40,39 @@ header li {
     margin: 20px;  
 }
 
-header div.navTabs ul.navLeft {
+header .logo-small {
+    margin: 0px;
+    padding: 0px;
+    padding-right: 10px;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: -20px;
+    width: 40px;
     float: left;
 }
 
-img.logo-small {
-    margin-left: -28px;
-    margin-top: 3px;
+.logo-small img {
+    width: 50px;
+    height: 50px;
 }
 
-.navTabs .navRight {
+header nav .navLeft {
+    float: left;
+}
+
+header nav .navRight {
     float: right;
 }
+
+.image-container {
+    margin: 5px;
+    padding: 10px;
+    width: 75%;
+    height: auto;
+}
+
+.image-container img {
+    width: 50%;
+}
+

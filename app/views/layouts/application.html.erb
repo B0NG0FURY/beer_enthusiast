@@ -14,24 +14,39 @@
   <body>
     <header>
       <nav>
-        <div class="navTabs">
-          <ul class="navLeft">
+        <ul class="logo-small">
+          <li>
+            <%= image_tag("beermug.jfif") %>
+          </li>
+        </ul>
+        <ul class="navLeft">
+          <li>
+            <%= link_to "Home", root_path %>
+          </li>
+          <li>
+            <%= link_to "Beers", beers_path %>
+          </li>
+          <li>
+            <%= link_to "Breweries", breweries_path %>
+          </li>
+        </ul>
+        <ul class="navRight">
+          <% if current_user %>
             <li>
-              <%= image_tag("beermug.jfif", size: "15x15", class: "logo-small") %>
+              <%= link_to "Log Out", logout_path %>
             </li>
             <li>
-              <%= link_to "Home", root_path %>
+              <%= link_to current_user.username, user_path(current_user) %>
+            </li>
+          <% else %>
+            <li>
+              <%= link_to "Sign Up", signup_path %>
             </li>
             <li>
-              <%= link_to "Beers", beers_path %>
+              <%= link_to "Log In", login_path %>
             </li>
-            <li>
-              <%= link_to "Breweries", breweries_path %>
-            </li>
-          </ul>
-          <ul class="navRight">
-          </ul>
-        </div>
+          <% end %>
+        </ul>
       </nav>
     </header>
 
