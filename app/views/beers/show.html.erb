@@ -1,16 +1,19 @@
-<h2><%= @beer.name %></h2>
-<p>
-    Brewed by: <%= @beer.brewery.name %><br>
-    Style: <%= @beer.style %><br>
-    ABV: <%= @beer.abv %><br>
-    IBU: <%= @beer.ibu %>
-</p>
+<div class="info-box">
+    <h2><%= @beer.name %></h2>
+    <p>
+        Brewed by: <%= link_to @beer.brewery.name, brewery_path(@beer.brewery) %><br>
+        Style: <%= @beer.style %><br>
+        ABV: <%= @beer.abv %><br>
+        IBU: <%= @beer.ibu %>
+    </p>
+</div>
 <%= link_to "Review this beer", new_beer_review_path(@beer) %>
 
 <h3>Reviews</h3>
-<div>
+<div class="review-list">
     <% recent_reviews(@beer).each do |review| %>
         <%= render partial: 'reviews/review', locals: {review: review} %>
     <% end %>
-    <%= link_to "All Reviews", beer_reviews_path(@beer) %>
 </div>
+<br>
+<%= link_to "All Reviews", beer_reviews_path(@beer) %>

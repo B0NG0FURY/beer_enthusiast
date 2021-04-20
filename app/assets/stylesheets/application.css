@@ -103,3 +103,30 @@ div.nav-grid a img.new-beer {
     height: 108px;
 }
 
+div.info-list p {
+    width: max-content;
+    background-color: rgb(245, 244, 238);
+    border: 0.5px solid black;
+    padding: 5px;
+}
+
+div.info-box {
+    width: max-content;
+    margin-top: 30px;
+    background-color: rgb(166, 213, 235);
+    border: 1px hidden;
+    border-width: medium;
+    padding: 7px;
+}
+
+div.review-list {
+    width: 100%;
+    border: 0.5px solid black;
+}
+
+div.review-list p {
+    width: auto;
+    border-bottom: 1px dashed black;
+    margin: 10px;
+    padding-bottom: 14px;
+}

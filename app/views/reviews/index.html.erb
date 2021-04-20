@@ -4,6 +4,8 @@
     <h1>Reviews for <%= @beer.name %></h1>
 <% end %>
 
-<% @reviews.reverse.each do |review| %>
-    <%= render partial: 'review', locals: {review: review} %>
-<% end %>
+<div class="review-list">
+    <% @reviews.reverse.each do |review| %>
+        <%= render partial: 'review', locals: {review: review} %>
+    <% end %>
+<div>

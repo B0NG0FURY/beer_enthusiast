@@ -2,28 +2,28 @@
 
 <%= form_for @beer do |f| %>
     <%= f.label :name %>
-    <%= f.text_field :name %><br>
+    <%= f.text_field :name %><br><br>
 
     <%= f.label :style %>
-    <%= f.text_field :style %><br>
+    <%= f.text_field :style %><br><br>
 
     <%= f.label :abv %>
-    <%= f.number_field :abv, step: :any %><br>
+    <%= f.number_field :abv, step: :any %><br><br>
 
     <%= f.label :ibu %>
-    <%= f.number_field :ibu %><br>
+    <%= f.number_field :ibu %><br><br>
 
     <%= f.label :brewery %>
-    <%= f.text_field :brewery %><br>
+    <%= f.text_field :brewery %><br><br>
 
     <%= f.fields_for :reviews do |r| %>
         <%= r.hidden_field :user_id, value: @user.id %>
 
         <%= r.label :rating, "Rating (0-100)" %>
-        <%= r.number_field :rating, min: 0, max: 100 %><br>
+        <%= r.number_field :rating, min: 0, max: 100 %><br><br>
 
         <%= r.label :comment %>
-        <%= r.text_area :comment %><br>
+        <%= r.text_area :comment %><br><br>
     <% end %>
 
     <%= f.submit "Add Beer" %>

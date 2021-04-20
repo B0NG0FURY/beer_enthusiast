@@ -4,6 +4,8 @@
     <h1>Beers</h1>
 <% end %>
 
-<% sort_beers_by_name(@beers).each do |beer| %>
-        <%= render partial: "beer", locals: {beer: beer} %>
-<% end %>
+<div class="info-list">
+    <% sort_beers_by_name(@beers).each do |beer| %>
+            <%= render partial: "beer", locals: {beer: beer} %>
+    <% end %>
+</div>
