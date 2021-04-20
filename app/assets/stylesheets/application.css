@@ -72,8 +72,9 @@ header nav .navRight {
     height: auto;
 }
 
-.image-container img {
-    width: 50%;
+div.image-container img {
+    width: 250px;
+    height: 130px;
 }
 
 .image-container > img.user-page {
@@ -90,5 +91,15 @@ header nav .navRight {
 .nav-grid > div {
     text-align: center;
     font-size: 25px;
+}
+
+div.nav-grid a img {
+    width: 210px;
+    height: 108px;
+}
+
+div.nav-grid a img.new-beer {
+    width: 150px;
+    height: 108px;
 }
 
