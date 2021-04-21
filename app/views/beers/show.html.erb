@@ -8,7 +8,8 @@
         Avg. Rating: <%= @beer.average_rating %>
     </p>
 </div>
-<%= link_to "Review this beer", new_beer_review_path(@beer) %>
+
+<%= link_to "Review this beer", new_beer_review_path(@beer), class: "btn-link" %>
 
 <h3>Reviews</h3>
 <div class="review-list">
@@ -17,4 +18,4 @@
     <% end %>
 </div>
 <br>
-<%= link_to "All Reviews", beer_reviews_path(@beer) %>
+<%= link_to "All Reviews", beer_reviews_path(@beer), class: "btn-link all-reviews" %>

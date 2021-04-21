@@ -1,7 +1,9 @@
-<h1><%= @brewery.name %></h1>
-<p>
-    <%= @brewery.location %>
-</p>
+<div class="brewery-info">
+    <h1><%= @brewery.name %></h1>
+    <p>
+        <%= @brewery.location %>
+    </p>
+</div>
 
 <h3>
     Beers
@@ -10,6 +12,8 @@
     <%end %>
 </h3>
 
-<% sort_beers_by_name(@beers).each do |beer| %>
-    <%= render partial: "beers/beer", locals: {beer: beer} %>
-<% end %>
+<div class="info-list">
+    <% sort_beers_by_name(@beers).each do |beer| %>
+        <%= render partial: "beers/beer", locals: {beer: beer} %>
+    <% end %>
+</div>

@@ -116,7 +116,7 @@ div.info-box {
     background-color: rgb(166, 213, 235);
     border: 1px hidden;
     border-width: medium;
-    padding: 7px;
+    padding: 7px 25px 7px 7px;
 }
 
 div.review-list {
@@ -129,4 +129,33 @@ div.review-list p {
     border-bottom: 1px dashed black;
     margin: 10px;
     padding-bottom: 14px;
+}
+
+div.brewery-info {
+    width: max-content;
+    border-bottom: 1px solid black;
+}
+
+a.btn-link:link, a.btn-link:visited {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    margin-top: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a.btn-link:hover, a.btn-link:active {
+    background-color: red;
+}
+
+a.btn-link.all-reviews:link, a.btn-link.all-reviews:visited {
+    background-color: rgb(167, 248, 87);
+    color: rgb(138, 23, 138);
+    margin-top: -5px;
+}
+
+a.btn-link.all-reviews:hover, a.btn-link.all-reviews:active {
+    background-color: rgb(124, 235, 13);
 }
