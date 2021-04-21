@@ -4,7 +4,8 @@
         Brewed by: <%= link_to @beer.brewery.name, brewery_path(@beer.brewery) %><br>
         Style: <%= @beer.style %><br>
         ABV: <%= @beer.abv %><br>
-        IBU: <%= @beer.ibu %>
+        IBU: <%= @beer.ibu %><br>
+        Avg. Rating: <%= @beer.average_rating %>
     </p>
 </div>
 <%= link_to "Review this beer", new_beer_review_path(@beer) %>
