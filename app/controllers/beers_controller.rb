@@ -12,6 +12,7 @@ class BeersController < ApplicationController
         redirect_to root_path if !current_user
         @user = current_user
         @beer = Beer.new
+        @beer.brewery = Brewery.new
         @beer.reviews.build
     end
 
@@ -32,7 +33,7 @@ class BeersController < ApplicationController
     private
 
     def beer_params
-        params.require(:beer).permit(:name, :style, :abv, :ibu, reviews_attributes: [:user_id, :rating, :comment])
+        params.require(:beer).permit(:name, :style, :abv, :ibu, brewery_attributes: [:name, :location], reviews_attributes: [:user_id, :rating, :comment])
     end
 
 end
