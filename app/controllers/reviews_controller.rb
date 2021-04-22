@@ -11,8 +11,8 @@ class ReviewsController < ApplicationController
 
     def new
         @user = current_user
-        if @user
-            @beer = Beer.find_by_id(params[:beer_id])
+        @beer = Beer.find_by_id(params[:beer_id])
+        if @user && !user_reviewed?(@beer)
             @review = Review.new
         else
             redirect_to beer_path(params[:beer_id])

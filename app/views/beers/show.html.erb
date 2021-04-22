@@ -11,7 +11,7 @@
 
 <% if user_reviewed?(@beer) %>
     <h4>Your Rating: <%= user_rating(@beer) %></h4>
-<% else %>
+<% elsif logged_in? %>
     <%= link_to "Review this beer", new_beer_review_path(@beer), class: "btn-link" %>
 <% end %>
 

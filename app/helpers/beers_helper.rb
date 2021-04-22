@@ -11,10 +11,6 @@ module BeersHelper
         Review.find_by(user_id: user.id, beer_id: beer.id)
     end
 
-    def user_reviewed?(beer)
-        beer.reviews.any? {|review| review.user == current_user}
-    end
-
     def user_rating(beer)
         review = beer.reviews.select {|review| review.user == current_user}
         review.first.rating
