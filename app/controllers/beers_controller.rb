@@ -17,9 +17,8 @@ class BeersController < ApplicationController
     end
 
     def create
-        brewery = Brewery.find_or_create_by(name: params[:beer][:brewery])
-        beer = Beer.new(brewery: brewery)
-        if beer.update(beer_params)
+        beer = Beer.create(beer_params)
+        if beer.save
             redirect_to user_beer_path(current_user, beer)
         else
             redirect_to new_beer_path

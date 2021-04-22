@@ -9,7 +9,11 @@
     </p>
 </div>
 
-<%= link_to "Review this beer", new_beer_review_path(@beer), class: "btn-link" %>
+<% if user_reviewed?(@beer) %>
+    <h4>Your Rating: <%= user_rating(@beer) %></h4>
+<% else %>
+    <%= link_to "Review this beer", new_beer_review_path(@beer), class: "btn-link" %>
+<% end %>
 
 <h3>Reviews</h3>
 <div class="review-list">

@@ -3,6 +3,7 @@ class Beer < ApplicationRecord
     has_many :reviews
     has_many :users, through: :reviews
     validates :name, presence: true, uniqueness: true
+    validates :brewery_id, presence: true
     accepts_nested_attributes_for :reviews
 
     def brewery_attributes=(brewery)
