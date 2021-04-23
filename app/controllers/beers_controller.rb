@@ -17,9 +17,9 @@ class BeersController < ApplicationController
     end
 
     def create
-        beer = Beer.create(beer_params)
+        beer = Beer.new(beer_params)
         if beer.save
-            redirect_to user_beer_path(current_user, beer)
+            redirect_to beer_path(beer)
         else
             redirect_to new_beer_path
         end

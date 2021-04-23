@@ -1,6 +1,6 @@
 module BeersHelper
     def recent_reviews(beer)
-        beer.reviews.reverse[0..9]
+        beer.reviews.reverse[0..4]
     end
 
     def sort_beers_by_name(array)
