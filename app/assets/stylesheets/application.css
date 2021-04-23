@@ -159,3 +159,13 @@ a.btn-link.all-reviews:link, a.btn-link.all-reviews:visited {
 a.btn-link.all-reviews:hover, a.btn-link.all-reviews:active {
     background-color: rgb(124, 235, 13);
 }
+
+.field_with_errors {
+    padding: 2px;
+    background-color: red;
+    width: fit-content;
+}
+
+#error_explanation {
+    color: red;
+}

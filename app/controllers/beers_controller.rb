@@ -17,11 +17,14 @@ class BeersController < ApplicationController
     end
 
     def create
-        beer = Beer.new(beer_params)
-        if beer.save
-            redirect_to beer_path(beer)
+        @user = current_user
+        @beer = Beer.new(beer_params)
+        if @beer.valid?
+            @beer.save
+            @beer.brewery.save
+            redirect_to beer_path(@beer)
         else
-            redirect_to new_beer_path
+            render :new
         end
     end
 

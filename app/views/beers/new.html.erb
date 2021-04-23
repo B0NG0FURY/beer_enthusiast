@@ -1,5 +1,16 @@
 <h1>Add a Beer</h1>
 
+<% if @beer.errors.any? %>
+    <div id="error_explanation">
+        <h3>Error</h3>
+        <ul>
+        <% @beer.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+        </ul>
+    </div>
+<% end %>
+
 <%= form_for @beer do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %><br><br>
@@ -16,20 +27,20 @@
     <%= f.fields_for :brewery do |b| %>
         <%= b.label :name, "Brewery Name" %>
         <%= b.text_field :name %><br><br>
-
+        
         <%= b.label :location, "Brewery Location" %>
         <%= b.text_field :location %><br><br>
     <% end %>
-
+    
     <%= f.fields_for :reviews do |r| %>
         <%= r.hidden_field :user_id, value: @user.id %>
-
+    
         <%= r.label :rating, "Rating (0-100)" %>
         <%= r.number_field :rating, min: 0, max: 100 %><br><br>
-
+    
         <%= r.label :comment %>
         <%= r.text_area :comment %><br><br>
     <% end %>
-
+    
     <%= f.submit "Add Beer" %>
 <% end %>

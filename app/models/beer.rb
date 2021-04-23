@@ -3,11 +3,12 @@ class Beer < ApplicationRecord
     has_many :reviews
     has_many :users, through: :reviews
     validates :name, presence: true, uniqueness: true
+    validates_associated :brewery
     accepts_nested_attributes_for :reviews
 
     def brewery_attributes=(brewery)
         self.brewery = Brewery.find_or_initialize_by(name: brewery[:name])
-        if self.brewery.location.nil?
+        if self.brewery.location.nil? || self.brewery.location.blank?
             self.brewery.location = brewery[:location]
         end
     end
