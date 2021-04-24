@@ -32,10 +32,27 @@ class BeersController < ApplicationController
         @beer = Beer.find_by_id(params[:id])
     end
 
+    def top10
+        if params[:user_id]
+            @user = User.find_by_id(params[:user_id])
+            @reviews = user_top_ten(@user)
+        else
+            @beers = top_ten_beers
+        end
+    end
+
     private
 
     def beer_params
         params.require(:beer).permit(:name, :style, :abv, :ibu, brewery_attributes: [:name, :location], reviews_attributes: [:user_id, :rating, :comment])
     end
 
+    def user_top_ten(user)
+        user.reviews.sort_by {|review| review.rating}.reverse[0..9]
+    end
+
+    def top_ten_beers
+        beers = Beer.all.reject {|beer| beer.average_rating.nil?}
+        beers.sort_by {|beer| beer.average_rating}.reverse[0..9]
+    end
 end
