@@ -1,15 +1,6 @@
 <h1>Add a Beer</h1>
 
-<% if @beer.errors.any? %>
-    <div id="error_explanation">
-        <h3>Error</h3>
-        <ul>
-        <% @beer.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-        <% end %>
-        </ul>
-    </div>
-<% end %>
+<%= render partial: 'users/error', locals: {model: @beer} %>
 
 <%= form_for @beer do |f| %>
     <%= f.label :name %>
