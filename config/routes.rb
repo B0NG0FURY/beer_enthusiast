@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#delete'
   get '/signup', to: 'users#new'
   resources :reviews, only: [:create, :update]
+  get '/beers/top10', to: 'beers#top10'
   resources :beers, only: [:index, :show, :new, :create] do
     resources :reviews, only: [:index, :new, :edit]
   end
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
     resources :beers, only: [:index, :show]
     resources :reviews, only: [:index, :edit]
     resources :breweries, only: [:index, :show]
+    get '/top10', to: 'beers#top10'
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

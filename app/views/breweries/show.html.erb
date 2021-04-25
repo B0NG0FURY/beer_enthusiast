@@ -5,15 +5,17 @@
     </p>
 </div>
 
-<h3>
+<h2>
     Beers
     <% if @user %>
         tried
     <%end %>
-</h3>
+</h2>
 
 <div class="info-list">
+    <ul>
     <% sort_beers_by_name(@beers).each do |beer| %>
         <%= render partial: "beers/beer", locals: {beer: beer} %>
     <% end %>
+    </ul>
 </div>

@@ -1,4 +1,4 @@
-<p>
+<li>
     <strong><%= link_to beer.name, beer_path(beer) %></strong><br>
     <% if !@brewery %>
         Brewed by: <%= link_to beer.brewery.name, brewery_path(beer.brewery) %><br>
@@ -14,4 +14,4 @@
     <% else %>
         Avg. Rating: <%= beer.average_rating %>
     <% end %>
-</p>
+</li>
