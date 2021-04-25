@@ -11,20 +11,14 @@
         Breweries Tried
     </div>
     <div>
+        <%= link_to image_tag("user-top-ten.jfif"), user_beers_top10_path(@user) %><br>
+        <%= @user.username %>'s Top 10
+    </div>
+    <div>
         <%= link_to image_tag("new-beer.jfif", class: "new-beer"), new_beer_path %><br>
         Add a New Beer
     </div>
 </div>
 
-<h2>Explore</h2>
-<div class="nav-grid">
-    <div>
-        <%= link_to image_tag("explore-beers.jfif"), beers_path %><br>
-        Beers
-    </div>
-    <div>
-        <%= link_to image_tag("explore-breweries.jfif"), breweries_path %><br>
-        Breweries 
-    </div>
-</div>
+<%= render partial: "welcome/nav" %>
 
