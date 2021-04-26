@@ -1,5 +1,6 @@
 <% if @user %>
     <h1>Beers <%= @user.username %> has tried</h1>
+    <%= link_to @user.username + "'s Top 10", user_beers_top10_path(@user) if @user != current_user %>
 <% else %>
     <h1>Beers</h1>
 <% end %>

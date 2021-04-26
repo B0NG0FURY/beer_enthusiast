@@ -112,6 +112,7 @@ div.info-list p {
 
 div.info-list ul {
     list-style-type: none;
+    margin-top: 20px;
 }
 
 div.info-list li {
