@@ -4,4 +4,6 @@
     <%= render partial: 'form', locals: {f: f} %>
 
     <%= f.submit "Edit Review" %>
-<% end %>
+<% end %> 
+<br>
+<%= button_to "Delete Review", review_path(@review), method: :delete, data: { confirm: "Delete Review?" } %>
