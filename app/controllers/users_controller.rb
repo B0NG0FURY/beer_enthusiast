@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     def show
         @user = current_user
         if !@user
+            flash[:error] = "You can't access this. You must create your own account!"
             redirect_to root_path
         end
     end

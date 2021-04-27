@@ -3,6 +3,7 @@ class BreweriesController < ApplicationController
         if params[:user_id]
             @user = User.find_by_id(params[:user_id])
             @breweries = @user.breweries
+            redirect_to breweries_path if !logged_in? || current_user.id != @user.id
         else
             @breweries = Brewery.all
         end
@@ -13,6 +14,7 @@ class BreweriesController < ApplicationController
         if params[:user_id]
             @user = User.find_by_id(params[:user_id])
             @beers = @user.beers.where(["brewery_id = ?", @brewery.id])
+            redirect_to brewery_path(@brewery) if !logged_in? || current_user.id != @user.id
         else
             @beers = @brewery.beers
         end

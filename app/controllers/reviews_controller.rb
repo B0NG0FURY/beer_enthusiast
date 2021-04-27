@@ -30,7 +30,10 @@ class ReviewsController < ApplicationController
 
     def edit
         @review = Review.find_by_id(params[:id])
-        redirect_to root_path if current_user != @review.user
+        if current_user != @review.user
+            flash[:error] = "You aren't authorized to do that."
+            redirect_to root_path
+        end
     end
 
     def update
