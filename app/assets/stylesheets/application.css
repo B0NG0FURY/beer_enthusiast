@@ -124,6 +124,10 @@ div.info-list li {
     margin-bottom: 10px;
 }
 
+div.info-list li.brewery-list  {
+    background-color: rgb(166, 213, 235);
+}
+
 div.info-box {
     width: max-content;
     margin-top: 30px;

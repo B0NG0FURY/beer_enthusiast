@@ -5,13 +5,18 @@
     <% end %>
 </h1>
 
-
-<% sort_breweries_by_name(@breweries).each do |brewery| %>
-    <p>
-        <% if @user %>
-            <%= link_to brewery.name, user_brewery_path(@user, brewery) %>
-        <% else %>
-            <%= link_to brewery.name, brewery_path(brewery) %>
+<div class="info-list">
+    <ul>
+        <% sort_breweries_by_name(@breweries).each do |brewery| %>
+            <li class="brewery-list">
+                <% if @user %>
+                    <%= link_to brewery.name, user_brewery_path(@user, brewery) %>
+                <% else %>
+                    <%= link_to brewery.name, brewery_path(brewery) %>
+                <% end %>
+                <br>
+                Avg. Beer Rating: <%= brewery.average_rating_all_beers %>
+            </li>
         <% end %>
-    </p>
-<% end %>
+    </ul>
+</div>

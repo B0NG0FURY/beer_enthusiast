@@ -14,10 +14,10 @@ class Beer < ApplicationRecord
     end
 
     def average_rating
-       if !self.reviews.empty?
-        ratings = self.reviews.map {|review| review.rating}
-        average = ratings.sum / ratings.count
-        average.round
-       end
+        if !self.reviews.empty?
+            ratings = self.reviews.map {|review| review.rating}.compact
+            average = ratings.sum / ratings.count
+            average.round
+        end
     end
 end
