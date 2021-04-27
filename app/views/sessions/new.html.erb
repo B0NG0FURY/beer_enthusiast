@@ -1,13 +1,6 @@
 <h1>Login</h1>
 
-<% if flash[:error] %>
-    <div id="error_explanation">
-        <h3>Error</h3>
-        <ul>
-            <li><%= flash[:error] %></li>
-        </ul>
-    </div>
-<% end %>
+<%= render partial: "flash" %>
 
 <%= form_for @user, url: '/login' do |f| %>
     <%= render partial: 'users/form', locals: {f: f} %>
