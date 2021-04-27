@@ -14,9 +14,9 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = current_user
-        if !@user
-            flash[:error] = "You can't access this. You must create your own account!"
+        @user = User.find_by_id(params[:id])
+        if !logged_in? || current_user.id != @user.id
+            flash[:error] = "You can't access this. You must use your own account!"
             redirect_to root_path
         end
     end
