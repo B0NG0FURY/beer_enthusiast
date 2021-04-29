@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
+  get '/auth/google_oauth2/callback', to: 'sessions#create_with_omniauth'
   get '/logout', to: 'sessions#delete'
   get '/signup', to: 'users#new'
   resources :reviews, only: [:create, :update, :destroy]
