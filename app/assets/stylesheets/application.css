@@ -73,6 +73,7 @@ header nav .navRight {
 }
 
 div.image-container img {
+    margin-left: -14px;
     width: 250px;
     height: 130px;
 }
