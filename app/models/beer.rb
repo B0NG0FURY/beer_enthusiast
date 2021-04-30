@@ -5,9 +5,10 @@ class Beer < ApplicationRecord
     validates :name, presence: true, uniqueness: true
     validates_associated :brewery
     accepts_nested_attributes_for :reviews
+    before_validation :normalize_attributes
 
     def brewery_attributes=(brewery)
-        self.brewery = Brewery.find_or_initialize_by(name: brewery[:name])
+        self.brewery = Brewery.find_or_initialize_by(name: brewery[:name].downcase.titleize)
         if self.brewery.location.nil? || self.brewery.location.blank?
             self.brewery.location = brewery[:location]
         end
@@ -24,5 +25,12 @@ class Beer < ApplicationRecord
     def self.top_ten
         beers = self.all.reject {|beer| beer.average_rating.nil?}
         beers.sort_by {|beer| beer.average_rating}.reverse[0..9]
+    end
+
+    private
+
+    def normalize_attributes
+        !self.name.blank? ? self.name = self.name.downcase.titleize : nil
+        !self.style.blank? ? self.style = self.style.downcase.titleize : nil
     end
 end
