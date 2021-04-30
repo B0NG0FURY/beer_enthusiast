@@ -20,4 +20,9 @@ class Beer < ApplicationRecord
             average.round
         end
     end
+
+    def self.top_ten
+        beers = self.all.reject {|beer| beer.average_rating.nil?}
+        beers.sort_by {|beer| beer.average_rating}.reverse[0..9]
+    end
 end
