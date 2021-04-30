@@ -1,24 +1,16 @@
 <h1>Welcome, <%= @user.username %></h1>
 
-<h2>Your Collection</h2>
-<div class="nav-grid">
-    <div>
-        <%= link_to image_tag("collection.jfif"), user_beers_path(@user) %><br>
-        Beers Tried
+<% if !@user.beers.empty? %>
+    <%= render partial: 'usernav', locals: {user: @user} %>
+<% else %>
+    <h2>Get Started:</h2>
+    <div class="nav-grid">
+        <div>
+            <%= link_to image_tag("new-beer.jfif", class: "new-beer"), new_beer_path %><br>
+            Add a New Beer
+        </div>
     </div>
-    <div>
-        <%= link_to image_tag("account-brewery.jfif"), user_breweries_path(@user) %><br>
-        Breweries Tried
-    </div>
-    <div>
-        <%= link_to image_tag("user-top-ten.jfif"), user_beers_top10_path(@user) %><br>
-        <%= @user.username %>'s Top 10
-    </div>
-    <div>
-        <%= link_to image_tag("new-beer.jfif", class: "new-beer"), new_beer_path %><br>
-        Add a New Beer
-    </div>
-</div>
+<% end %>
 
 <%= render partial: "welcome/nav" %>
 
