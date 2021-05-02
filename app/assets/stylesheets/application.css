@@ -85,7 +85,7 @@ div.image-container img {
 
 .nav-grid {
     display: inline-grid;
-    grid-gap: 30px;
+    grid-gap: 20px;
     grid-template-columns: auto auto auto auto auto;
 }
 
@@ -95,8 +95,8 @@ div.image-container img {
 }
 
 div.nav-grid a img {
-    width: 210px;
-    height: 108px;
+    width: 200px;
+    height: 98px;
 }
 
 div.nav-grid a img.new-beer {
