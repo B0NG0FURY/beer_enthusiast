@@ -44,7 +44,7 @@ class BeersController < ApplicationController
     def strongest
         if params[:user_id]
             @user = User.find_by_id(params[:user_id])
-            @beers = @user.strongest.sort_by {|beer| beer.abv}.reverse
+            @beers = @user.beers.strongest.sort_by {|beer| beer.abv}.reverse
             redirect_to beers_strongest_path if !logged_in? || current_user.id != @user.id
         else
             @beers = Beer.strongest.sort_by {|beer| beer.abv}.reverse
