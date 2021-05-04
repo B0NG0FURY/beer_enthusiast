@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Brewery.create(name: "Dr. Suds", location: "Portland, OR")
+Brewery.create(name: "Lobrau", location: "Dusseldorf, Germany")
+Brewery.create(name: "Valhalla", location: "Albany, NY")
+Brewery.create(name: "Hopsville", location: "Portland, OR")
+Brewery.create(name: "Brewski", location: "Denver, CO")
+
+Beer.create()
+Beer.create()
+Beer.create()
+Beer.create()
+Beer.create()
+Beer.create()
