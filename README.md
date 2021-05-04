@@ -3,6 +3,11 @@
 Beer Enthusiast is a Rails web app that allows the user to keep track of and explore beers, view ratings and comments from different users who have tried the beer, contribute their own ratings, and add new beers to the application. 
 
 ## Installation
+Fork and clone this repo.
+
+Run 'bundle install'
+
+Run 'rake db:migrate' to start the database and 'rake db:seed' to add some beers and breweries to it.
 
 ## Usage
 
