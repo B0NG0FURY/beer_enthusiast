@@ -7,6 +7,9 @@
     <%= f.text_field :name %><br><br>
 
     <%= f.label :style %>
+    <%= f.select :style_id, Style.all.map {|s| [ s.name, s.id ] }, include_blank: true %><br><br>
+
+    <%= f.label :style, "New Style" %>
     <%= f.text_field :style %><br><br>
 
     <%= f.label :abv %>
