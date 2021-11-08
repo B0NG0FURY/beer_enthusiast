@@ -5,6 +5,7 @@ class Beer < ApplicationRecord
     has_many :users, through: :reviews
     validates :name, presence: true, uniqueness: true
     validates_associated :brewery
+    validates_associated :style
     accepts_nested_attributes_for :reviews
     before_validation :normalize_attributes
     scope :strongest, -> { where('abv > 8') }
