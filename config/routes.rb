@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :styles
   get '/', to: 'welcome#index'
   root 'welcome#index'
   get '/login', to: 'sessions#new'
