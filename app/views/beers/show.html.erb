@@ -2,7 +2,7 @@
     <h2><%= @beer.name %></h2>
     <p>
         Brewed by: <%= link_to @beer.brewery.name, brewery_path(@beer.brewery) %><br>
-        Style: <%= @beer.style %><br>
+        Style: <%= @beer.style.name %><br>
         ABV: <%= @beer.abv %><br>
         IBU: <%= @beer.ibu %><br>
         Avg. Rating: <%= @beer.average_rating %>
