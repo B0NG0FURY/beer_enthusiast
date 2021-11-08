@@ -23,3 +23,7 @@ Beer.create(name: "Bee's Knees", style: "Pale Ale", abv: 5.0, ibu: 50, brewery: 
 Beer.create(name: "Testy", style: "Porter", abv: 5.9, ibu: 48, brewery: Brewery.third)
 Beer.create(name: "Bat Cave", style: "Black Ale", abv: 6.7, ibu: 58, brewery: Brewery.first)
 Beer.create(name: "Duff", style: "Lager", abv: 5.0, ibu: 34, brewery: Brewery.second)
+
+styles = ["Pale Ale", "IPA", "Wheat Ale", "Porter", "Stout", "Pilsner"]
+
+styles.each {|style| Style.create(name: style)}
