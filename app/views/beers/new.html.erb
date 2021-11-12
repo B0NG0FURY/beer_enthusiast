@@ -6,11 +6,13 @@
     <%= f.label :name %>
     <%= f.text_field :name %><br><br>
 
-    <%= f.label :style %>
-    <%= f.select :style_id, Style.all.map {|s| [ s.name, s.id ] }, include_blank: true %><br><br>
+    <%= f.fields_for :style do |s| %>
+        <%= s.label :style %>
+        <%= s.select :id, Style.all.map {|s| [ s.name, s.id ] }, include_blank: true %><br><br>
 
-    <%= f.label :style, "New Style" %>
-    <%= f.text_field :style %><br><br>
+        <%= s.label :style, "New Style" %>
+        <%= s.text_field :name %><br><br>
+    <% end %>
 
     <%= f.label :abv %>
     <%= f.number_field :abv, step: :any %><br><br>

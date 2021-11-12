@@ -17,6 +17,10 @@ class Beer < ApplicationRecord
         end
     end
 
+    def styles_attributes=(style)
+
+    end
+
     def average_rating
         if !self.reviews.empty?
             ratings = self.reviews.map {|review| review.rating}.compact
