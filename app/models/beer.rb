@@ -17,8 +17,12 @@ class Beer < ApplicationRecord
         end
     end
 
-    def styles_attributes=(style)
-
+    def style_attributes=(style)
+        if style[:name].blank? && !style[:id].blank?
+            self.style = Style.find_by_id(style[:id])
+        elsif !style[:name].blank? && style[:id].blank?
+            self.style = Style.find_or_initialize_by(name: style[:name].downcase.titleize)
+        end
     end
 
     def average_rating
@@ -38,6 +42,5 @@ class Beer < ApplicationRecord
 
     def normalize_attributes
         !self.name.blank? ? self.name = self.name.downcase.titleize : nil
-        !self.style.blank? ? self.style = self.style.downcase.titleize : nil
     end
 end

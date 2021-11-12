@@ -13,15 +13,18 @@ class BeersController < ApplicationController
         @user = current_user
         @beer = Beer.new
         @beer.brewery = Brewery.new
+        @beer.style = Style.new
         @beer.reviews.build
     end
 
     def create
+        puts params
         @user = current_user
         @beer = Beer.new(beer_params)
         if @beer.valid?
             @beer.save
             @beer.brewery.save
+            @beer.style.save
             redirect_to beer_path(@beer)
         else
             render :new
@@ -54,6 +57,6 @@ class BeersController < ApplicationController
     private
 
     def beer_params
-        params.require(:beer).permit(:name, :abv, :ibu, styles_attributes: [:id, :name], brewery_attributes: [:name, :location], reviews_attributes: [:user_id, :rating, :comment])
+        params.require(:beer).permit(:name, :abv, :ibu, style_attributes: [:id, :name], brewery_attributes: [:name, :location], reviews_attributes: [:user_id, :rating, :comment])
     end
 end
