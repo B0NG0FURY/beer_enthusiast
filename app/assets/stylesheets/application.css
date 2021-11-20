@@ -102,6 +102,7 @@ div.nav-grid a img {
 div.nav-grid a img.new-beer {
     width: 150px;
     height: 108px;
+    margin-top: -10px;
 }
 
 div.info-list p {
