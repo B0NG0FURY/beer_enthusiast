@@ -87,6 +87,7 @@ div.image-container img {
     display: inline-grid;
     grid-gap: 20px;
     grid-template-columns: auto auto auto auto auto;
+    margin-bottom: 25px;
 }
 
 .nav-grid > div {
