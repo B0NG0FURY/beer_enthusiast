@@ -1,4 +1,4 @@
-<h1>Welcome, <%= @user.username %></h1>
+<h1 class="welcome">Welcome, <%= @user.username %></h1>
 
 <% if !@user.beers.empty? %>
     <%= render partial: 'usernav', locals: {user: @user} %>

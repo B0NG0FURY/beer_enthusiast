@@ -195,3 +195,7 @@ div.google-signin a img {
     height: 50px;
     margin-left: -11px;
 }
+
+.welcome {
+    font-family: 'Merriweather', serif;
+}
