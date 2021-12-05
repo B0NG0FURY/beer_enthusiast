@@ -1,15 +1,17 @@
 <li>
-    <strong><%= link_to beer.name, beer_path(beer) %></strong><br>
+    <h2><strong><%= link_to beer.name, beer_path(beer) %></strong></h2>
     <% if !@brewery %>
-        Brewed by: <%= link_to beer.brewery.name, brewery_path(beer.brewery) %><br>
+        <p>Brewed by: <%= link_to beer.brewery.name, brewery_path(beer.brewery) %></p>
     <% end %>
-    Style: <%= beer.style.name %><br>
-    ABV: <%= beer.abv %><br>
-    IBU: <%= beer.ibu %><br>
+    <p>
+        Style: <%= beer.style.name %><br>
+        ABV: <%= beer.abv %><br>
+        IBU: <%= beer.ibu %><br>
+    </p>
 
     <% if @user %>
         Rating: <%= get_review(@user, beer).rating %><br>
-        Comment: <%= get_review(@user, beer).comment %><br>
+        <p>Comment: <%= get_review(@user, beer).comment %></p>
         <%= link_to "Edit", edit_user_review_path(@user, get_review(@user, beer)) if @user == current_user %>
     <% else %>
         Avg. Rating: <%= beer.average_rating %>
