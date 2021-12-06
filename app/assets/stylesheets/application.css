@@ -16,7 +16,7 @@
 
 body {
     padding: 20px;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 header {  
@@ -24,12 +24,13 @@ header {
     position: fixed;
     left: 0;  
     right: 0;  
-    top: 0px;  
+    top: 0;  
     height: 40px;
     width: 100%;
     display: inline-table;
     align-items: center;  
-    box-shadow: 0 0 25px 0 black;  
+    box-shadow: 0 0 25px 0 black;
+    z-index: 1;  
 }
 
 header * {  
@@ -44,7 +45,7 @@ header .logo-small {
     margin: 0px;
     padding: 0px;
     padding-right: 10px;
-    position: absolute;
+    position: fixed;
     top: 0px;
     bottom: 0px;
     left: -20px;
@@ -106,20 +107,14 @@ div.nav-grid a img.new-beer {
     margin-top: -10px;
 }
 
-/* div.info-list p {
-    width: max-content;
-    background-color: rgb(245, 244, 238);
-    border: 0.5px solid black;
-    padding: 5px;
-} */
-
 div.info-list ul {
     width: 500px;
     list-style-type: none;
     margin-top: 20px;
 }
 
-div.info-list li {
+div.info-list li.info-card {
+    position: relative;
     background-color: rgb(245, 244, 238);
     border: 0.5px solid black;
     padding: 15px 25px;
@@ -129,6 +124,15 @@ div.info-list li {
 
 div.info-list li p {
     font-size: 20px;
+}
+
+p.rating {
+    position: absolute;
+    justify-content: center;
+    top: 20px;
+    right: 30px;
+    width: 85px;
+    border: 0.5px solid black;
 }
 
 div.info-list li.brewery-list  {
