@@ -1,5 +1,5 @@
 <li class="info-card">
-    <p class="rating">Rating:<br><%= get_review(@user, beer).rating %></p>
+    <p class="rating">Rating<br><strong><%= get_review(@user, beer).rating %></strong></p>
     <h2><strong><%= link_to beer.name, beer_path(beer) %></strong></h2>
     <% if !@brewery %>
         <p>Brewed by: <%= link_to beer.brewery.name, brewery_path(beer.brewery) %></p>
