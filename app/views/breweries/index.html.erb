@@ -8,14 +8,14 @@
 <div class="info-list">
     <ul>
         <% sort_breweries_by_name(@breweries).each do |brewery| %>
-            <li class="brewery-list">
+            <li class="info-card brewery-list">
                 <% if @user %>
-                    <%= link_to brewery.name, user_brewery_path(@user, brewery) %>
+                    <h2><%= link_to brewery.name, user_brewery_path(@user, brewery) %></h2>
                 <% else %>
-                    <%= link_to brewery.name, brewery_path(brewery) %>
+                    <h2><%= link_to brewery.name, brewery_path(brewery) %></h2>
                 <% end %>
                 <br>
-                Avg. Beer Rating: <%= brewery.average_rating_all_beers %>
+                <p>Avg. Beer Rating: <%= brewery.average_rating_all_beers %></p>
             </li>
         <% end %>
     </ul>
