@@ -1,5 +1,4 @@
 <li class="info-card">
-    <p class="rating">Rating<br><strong><%= get_review(@user, beer).rating %></strong></p>
     <h2><strong><%= link_to beer.name, beer_path(beer) %></strong></h2>
     <% if !@brewery %>
         <p>Brewed by: <%= link_to beer.brewery.name, brewery_path(beer.brewery) %></p>
@@ -10,9 +9,12 @@
         IBU: <%= beer.ibu %><br>
     </p>
     <% if @user %>
+        <p class="rating">
+            Your Rating<br><strong><%= get_review(@user, beer).rating %></strong>
+        </p>
         <p>Comment: <%= get_review(@user, beer).comment %></p>
         <%= link_to "Edit", edit_user_review_path(@user, get_review(@user, beer)) if@user==    current_user %>
     <% else %>
-        Avg. Rating: <%= beer.average_rating %>
+        <p class="rating">Avg. Rating: <%= beer.average_rating %></p>
     <% end %>
 </li>

@@ -4,9 +4,13 @@ class Brewery < ApplicationRecord
     before_validation :normalize_attributes
 
     def average_rating_all_beers
-        ratings = self.beers.map {|beer| beer.average_rating}.compact
-        average = ratings.sum / ratings.count
-        average.round
+        if self.beers.empty?
+            'N/A'
+        else
+            ratings = self.beers.map {|beer| beer.average_rating}.compact
+            average = ratings.sum / ratings.count
+            average.round
+        end
     end
 
     private
