@@ -15,6 +15,7 @@
                     <h2><%= link_to brewery.name, brewery_path(brewery) %></h2>
                 <% end %>
                 <br>
+                <p><%= brewery.location %></p>
                 <p>Avg. Beer Rating: <%= brewery.average_rating_all_beers %></p>
             </li>
         <% end %>
