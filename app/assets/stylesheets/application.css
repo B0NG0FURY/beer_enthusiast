@@ -141,6 +141,10 @@ div.info-list ul li.info-card.brewery-list  {
     background-color: rgb(166, 213, 235);
 }
 
+.info-card.brewery-list {
+    width: 320px;
+}
+
 .info-card.brewery-list h2 {
     margin-bottom: -15px;
 }
