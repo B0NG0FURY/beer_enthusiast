@@ -35,6 +35,10 @@ class BeersController < ApplicationController
         @beer = Beer.find_by_id(params[:id])
     end
 
+    def search
+        @beers = Beer.where("name LIKE ?", "%" + params[:q] + "%")
+    end
+
     def top10
         if params[:user_id]
             @user = User.find_by_id(params[:user_id])
