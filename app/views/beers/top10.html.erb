@@ -8,13 +8,18 @@
 <% if @reviews %>
     <ol>
     <% @reviews.each do |review| %>
-        <li>
-            <strong><%= link_to review.beer.name, beer_path(review.beer) %></strong><br>
-            Brewed by: <%= link_to review.beer.brewery.name, brewery_path(review.beer.brewery) %><br>
-            ABV: <%= review.beer.abv %><br>
-            IBU: <%= review.beer.ibu %><br>
-            Rating: <%= review.rating %><br>
-            Comment: <%= review.comment %><br>
+        <li class="info-card">
+            <h2><strong><%= link_to review.beer.name, beer_path(review.beer) %></strong></h2>
+            <p>Brewed by: <%= link_to review.beer.brewery.name, brewery_path(review.beer.brewery) %></p>
+            <p>
+                Style: <%= review.beer.style.name %><br>
+                ABV: <%= review.beer.abv %><br>
+                IBU: <%= review.beer.ibu %><br>
+            </p>
+            <p class="rating">
+                Your Rating<br><strong><%= review.rating %></strong>
+            </p>
+            <p>Comment: <%= review.comment %></p>
             <%= link_to "Edit", edit_user_review_path(@user, review) if @user == current_user %>
         </li>
     <% end %>

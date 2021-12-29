@@ -113,6 +113,11 @@ div.info-list ul {
     margin-top: 20px;
 }
 
+div.info-list ol {
+    width: 500px;
+    margin-top: 20px;
+}
+
 .info-card {
     position: relative;
     background-color: rgb(245, 244, 238);
