@@ -15,6 +15,6 @@
         <p>Comment: <%= get_review(@user, beer).comment %></p>
         <%= link_to "Edit", edit_user_review_path(@user, get_review(@user, beer)) if@user==    current_user %>
     <% else %>
-        <p class="rating">Avg. Rating: <%= beer.average_rating %></p>
+        <p class="rating">Avg. Rating<br><strong><%= beer.average_rating %></strong></p>
     <% end %>
 </li>
