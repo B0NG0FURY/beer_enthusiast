@@ -1,9 +1,13 @@
-<h1>Search Results:</h1>
+<% if @beers.empty? %>
+    <h1><strong>No Results Found</strong></h1>
+<% else %>
+    <h1>Search Results For "<%= @q %>":</h1>
 
-<div class="info-list">
-    <ul>
-        <% sort_beers_by_name(@beers).each do |beer| %>
-            <%= render partial: "beer", locals: {beer: beer} %>
-        <% end %>
-    </ul>
-</div>
+    <div class="info-list">
+        <ul>
+            <% sort_beers_by_name(@beers).each do |beer| %>
+                <%= render partial: "beer", locals: {beer: beer} %>
+            <% end %>
+        </ul>
+    </div>
+<% end %>

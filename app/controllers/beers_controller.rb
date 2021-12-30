@@ -36,7 +36,12 @@ class BeersController < ApplicationController
     end
 
     def search
-        @beers = Beer.where("name LIKE ?", "%" + params[:q] + "%")
+        @q = params[:q]
+        if @q == ""
+            @beers = []
+        else
+            @beers = Beer.where("name LIKE ?", "%" + @q + "%")
+        end
     end
 
     def top10
