@@ -160,8 +160,22 @@ div.info-box {
     margin-top: 30px;
     background-color: rgb(166, 213, 235);
     border: 1px hidden;
+    box-shadow: 1px 5px 5px rgb(41, 41, 124),
+                2px 5px 5px rgb(41, 41, 124),
+                3px 5px 5px rgb(41, 41, 124),
+                4px 5px 5px rgb(41, 41, 124),
+                5px 5px 5px rgb(41, 41, 124);
     border-width: medium;
-    padding: 7px 25px 7px 7px;
+    padding: 7px 25px 7px 10px;
+}
+
+/* .user-rating {
+    font-size: 18px;
+    font-weight: bolder;
+} */
+
+.review-title {
+    text-decoration: underline;
 }
 
 div.review-list {
