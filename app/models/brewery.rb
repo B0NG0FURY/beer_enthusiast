@@ -5,7 +5,7 @@ class Brewery < ApplicationRecord
 
     def average_rating_all_beers
         if self.beers.empty?
-            'N/A'
+            '-'
         else
             ratings = self.beers.map {|beer| beer.average_rating}.compact
             average = ratings.sum / ratings.count

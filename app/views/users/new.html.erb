@@ -10,3 +10,7 @@
 
     <%= f.submit "Sign Up" %>
 <% end %>
+<br>
+<div class="google-signin">
+    <%= link_to image_tag("google-login.png"), '/auth/google_oauth2', method: :post %>
+</div>
