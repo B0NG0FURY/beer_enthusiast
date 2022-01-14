@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  concern :paginatable do
+    get '(page/:page)', action: :index, on: :collection, as: ''
+  end
   resources :styles
   get '/', to: 'welcome#index'
   root 'welcome#index'
@@ -12,6 +15,7 @@ Rails.application.routes.draw do
   get '/beers/strongest', to: 'beers#strongest'
   get '/beers/search', to: 'beers#search'
   resources :beers, only: [:index, :show, :new, :create] do
+    concerns :paginatable
     resources :reviews, only: [:index, :new, :edit]
   end
   resources :breweries, only: [:index, :show]
