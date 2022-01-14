@@ -9,6 +9,7 @@ class Beer < ApplicationRecord
     accepts_nested_attributes_for :reviews
     before_validation :normalize_attributes
     scope :strongest, -> { where('abv > 8') }
+    paginates_per 15
 
     def brewery_attributes=(brewery)
         self.brewery = Brewery.find_or_initialize_by(name: brewery[:name].downcase.titleize)

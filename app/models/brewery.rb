@@ -2,6 +2,7 @@ class Brewery < ApplicationRecord
     validates :name, presence: true
     has_many :beers
     before_validation :normalize_attributes
+    paginates_per 15
 
     def average_rating_all_beers
         if self.beers.empty?
