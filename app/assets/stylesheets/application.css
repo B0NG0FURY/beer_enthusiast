@@ -132,6 +132,10 @@ div.info-list li p {
     font-size: 20px;
 }
 
+div.page-nav {
+    margin: 5px 0px 0px 120px;
+}
+
 p.rating {
     position: absolute;
     background-color: white;

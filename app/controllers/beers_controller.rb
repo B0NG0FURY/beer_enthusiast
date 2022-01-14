@@ -2,9 +2,9 @@ class BeersController < ApplicationController
     def index
         if params[:user_id]
             @user = User.find_by_id(params[:user_id])
-            @beers = @user.beers
+            @beers = @user.beers.order(:name).page params[:page]
         else
-            @beers = Beer.all
+            @beers = Beer.all.order(:name).page params[:page]
         end
     end
 

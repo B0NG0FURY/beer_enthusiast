@@ -11,4 +11,8 @@
             <%= render partial: "beer", locals: {beer: beer} %>
     <% end %>
     </ul>
+
+    <div class="page-nav">
+        <%= paginate @beers %>
+    </div>
 </div>
