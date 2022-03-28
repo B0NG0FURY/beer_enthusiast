@@ -17,6 +17,7 @@
 body {
     padding: 20px;
     margin-top: 40px;
+    background-color: whitesmoke;
 }
 
 header {  
@@ -64,6 +65,14 @@ header nav .navLeft {
 
 header nav .navRight {
     float: right;
+}
+
+.link-hover li:hover {
+    background-color: gray;
+}
+
+li a:hover {
+    color: blue;
 }
 
 .image-container {

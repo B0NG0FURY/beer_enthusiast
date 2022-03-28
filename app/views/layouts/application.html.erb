@@ -23,7 +23,7 @@
             <%= image_tag("beermug.jfif") %>
           </li>
         </ul>
-        <ul class="navLeft">
+        <ul class="navLeft link-hover">
           <li>
             <%= link_to "Home", root_path %>
           </li>
@@ -46,7 +46,7 @@
             <% end %>
           </li>
         </ul>
-        <ul class="navRight">
+        <ul class="navRight link-hover">
           <% if current_user %>
             <li>
               <%= link_to current_user.username, user_path(current_user) %>
