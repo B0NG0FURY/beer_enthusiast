@@ -1,18 +1,19 @@
-<% if @user %>
-    <h1>Beers <%= @user.username %> has tried</h1>
-    <%= link_to @user.username + "'s Top 10", user_beers_top10_path(@user) if @user != current_user %>
-<% else %>
-    <h1>Beers</h1>
-<% end %>
-
-<div class="info-list">
-    <ul>
-    <% sort_beers_by_name(@beers).each do |beer| %>
-            <%= render partial: "beer", locals: {beer: beer} %>
+<div class="info-page">
+    <% if @user %>
+        <h1>Beers <%= @user.username %> has tried</h1>
+        <%= link_to @user.username + "'s Top 10", user_beers_top10_path(@user) if @user !=
+    current_user %>
+    <% else %>
+        <h1>Beers</h1>
     <% end %>
-    </ul>
-
-    <div class="page-nav">
-        <%= paginate @beers %>
+    <div class="info-list">
+        <ul>
+        <% sort_beers_by_name(@beers).each do |beer| %>
+                    <%= render partial: "beer", locals: {beer: beer} %>
+        <% end %>
+        </ul
+        <div class="page-nav">
+            <%= paginate @beers %>
+        </div>
     </div>
 </div>

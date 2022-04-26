@@ -1,34 +1,36 @@
-<% if @user %>
-    <h1><%= @user.username %>'s Top 10 Beers</h1>
-<% else %>
-    <h1>Top 10 Beers</h1>
-<% end %>
+<div class="info-page">
+    <% if @user %>
+        <h1><%= @user.username %>'s Top 10 Beers</h1>
+    <% else %>
+        <h1>Top 10 Beers</h1>
+    <% end %>
 
-<div class="info-list">
-<% if @reviews %>
-    <ol>
-    <% @reviews.each do |review| %>
-        <li class="info-card">
-            <h2><strong><%= link_to review.beer.name, beer_path(review.beer) %></strong></h2>
-            <p>Brewed by: <%= link_to review.beer.brewery.name, brewery_path(review.beer.brewery) %></p>
-            <p>
-                Style: <%= review.beer.style.name %><br>
-                ABV: <%= review.beer.abv %><br>
-                IBU: <%= review.beer.ibu %><br>
-            </p>
-            <p class="rating">
-                Your Rating<br><strong><%= review.rating %></strong>
-            </p>
-            <p>Comment: <%= review.comment %></p>
-            <%= link_to "Edit", edit_user_review_path(@user, review) if @user == current_user %>
-        </li>
+    <div class="info-list">
+    <% if @reviews %>
+        <ol>
+        <% @reviews.each do |review| %>
+            <li class="info-card">
+                <h2><strong><%= link_to review.beer.name, beer_path(review.beer) %></strong></  h2>
+                <p>Brewed by: <%= link_to review.beer.brewery.name, brewery_path(review.beer.   brewery) %></p>
+                <p>
+                    Style: <%= review.beer.style.name %><br>
+                    ABV: <%= review.beer.abv %><br>
+                    IBU: <%= review.beer.ibu %><br>
+                </p>
+                <p class="rating">
+                    Your Rating<br><strong><%= review.rating %></strong>
+                </p>
+                <p>Comment: <%= review.comment %></p>
+                <%= link_to "Edit", edit_user_review_path(@user, review) if @user ==    current_user %>
+            </li>
+        <% end %>
+        </ol>
+    <% elsif @beers %>
+        <ol>
+        <% @beers.each do |beer| %>
+            <%= render partial: "beer", locals: {beer: beer} %>
+        <% end %>
+        </ol>
     <% end %>
-    </ol>
-<% elsif @beers %>
-    <ol>
-    <% @beers.each do |beer| %>
-        <%= render partial: "beer", locals: {beer: beer} %>
-    <% end %>
-    </ol>
-<% end %>
+    </div>
 </div>

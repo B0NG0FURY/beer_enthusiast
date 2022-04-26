@@ -1,19 +1,21 @@
-<% if @user %>
-    <h1><%= @user.username %>'s Strongest Beers (8% and Above)</h1>
-<% else %>
-    <h1>Strongest Beers (8% and Above)</h1>
-<% end %>
+<div class="info-page">
+    <% if @user %>
+        <h1><%= @user.username %>'s Strongest Beers (8% and Above)</h1>
+    <% else %>
+        <h1>Strongest Beers (8% and Above)</h1>
+    <% end %>
 
-<% if !@beers.empty? %>
-    <div class="info-list">
-        <ul>
-        <% @beers.each do |beer| %>
-            <%= render partial: "beer", locals: {beer: beer} %>
-        <% end %>
-        </ul>
-    </div>
-<% else %>
-    <p>
-        You haven't tried any beers that meet the required abv for this section. Once you do they will show up here.
-    </p>
-<% end %>
+    <% if !@beers.empty? %>
+        <div class="info-list">
+            <ul>
+            <% @beers.each do |beer| %>
+                <%= render partial: "beer", locals: {beer: beer} %>
+            <% end %>
+            </ul>
+        </div>
+    <% else %>
+        <p>
+            You haven't tried any beers that meet the required abv for this section. Once you   do they will show up here.
+        </p>
+    <% end %>
+</div>
