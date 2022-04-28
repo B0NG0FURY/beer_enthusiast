@@ -118,7 +118,7 @@ div.nav-grid a img.new-beer {
 }
 
 .info-page {
-    width: 40%;
+    width: 52%;
     margin: auto;
 }
 
@@ -127,13 +127,13 @@ div.nav-grid a img.new-beer {
 }
 
 div.info-list ul {
-    width: 500px;
+    width: 700px;
     list-style-type: none;
     margin-top: 20px;
 }
 
 div.info-list ol {
-    width: 500px;
+    width: 700px;
     margin-top: 20px;
 }
 
@@ -144,22 +144,26 @@ div.info-list ol {
     padding: 15px 25px;
     margin-left: -30px;
     margin-bottom: 10px;
-    width: 410px;
+    width: 560px;
+}
+
+.info-list li h2 {
+    font-size: 36px;
 }
 
 div.info-list li p {
-    font-size: 20px;
+    font-size: 28px;
 }
 
 div.page-nav {
     margin: 5px 0px 0px 120px;
 }
 
-p.rating {
+.rating {
     position: absolute;
     background-color: white;
-    top: 50px;
-    right: 65px;
+    top: 70px;
+    right: 95px;
     width: 95px;
     padding: 5px 0px;
     text-align: center;
