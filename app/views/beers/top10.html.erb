@@ -9,9 +9,9 @@
     <% if @reviews %>
         <ol>
         <% @reviews.each do |review| %>
-            <li class="info-card">
-                <h2><strong><%= link_to review.beer.name, beer_path(review.beer) %></strong></  h2>
-                <p>Brewed by: <%= link_to review.beer.brewery.name, brewery_path(review.beer.   brewery) %></p>
+            <li class="info-item">
+                <h2><strong><%= link_to review.beer.name, beer_path(review.beer) %></strong></h2>
+                <p>Brewed by: <%= link_to review.beer.brewery.name, brewery_path(review.beer.brewery) %></p>
                 <p>
                     Style: <%= review.beer.style.name %><br>
                     ABV: <%= review.beer.abv %><br>

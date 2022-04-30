@@ -183,16 +183,27 @@ div.page-nav {
     border: 0.5px solid black;
 }
 
-div.info-list ul li.info-card.brewery-list  {
+/* div.info-list ul li.info-item.brewery-list  {
     background-color: rgb(166, 213, 235);
-}
+} */
 
-.info-card.brewery-list {
+.info-item.brewery-list {
     width: 320px;
 }
 
-.info-card.brewery-list h2 {
+.info-item.brewery-list h2 {
     margin-bottom: -15px;
+}
+
+.brewery-rating {
+    position: absolute;
+    background-color: white;
+    top: 30px;
+    right: 30px;
+    width: 95px;
+    padding: 5px 0px;
+    text-align: center;
+    border: 0.5px solid black;
 }
 
 div.info-box {
