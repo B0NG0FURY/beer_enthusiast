@@ -118,41 +118,47 @@ div.nav-grid a img.new-beer {
 }
 
 .info-page {
-    width: 52%;
+    width: 58%;
     margin: auto;
 }
 
 .info-page h1 {
-    margin-left: 10px;
+    position: relative;
+    margin: 20px 0px 0px 10px;
 }
 
 div.info-list ul {
     width: 700px;
     list-style-type: none;
     margin-top: 20px;
+    border: 1.5px solid black;
+    background-color: rgb(245, 244, 238);
 }
 
 div.info-list ol {
     width: 700px;
     margin-top: 20px;
+    border: 1.5px solid black;
+    background-color: rgb(245, 244, 238);
 }
 
-.info-card {
+.info-item {
     position: relative;
-    background-color: rgb(245, 244, 238);
-    border: 0.5px solid black;
-    padding: 15px 25px;
-    margin-left: -30px;
-    margin-bottom: 10px;
+    border-bottom: 1px dashed black;
+    padding: 15px 20px;
+    /* margin-left: -30px;
+    margin-bottom: 10px; */
+    margin: auto;
+    margin-left: 32px;
     width: 560px;
 }
 
 .info-list li h2 {
-    font-size: 36px;
+    font-size: 32px;
 }
 
 div.info-list li p {
-    font-size: 28px;
+    font-size: 24px;
 }
 
 div.page-nav {
@@ -160,7 +166,7 @@ div.page-nav {
 }
 
 .pagination {
-    width: 30%;
+    width: 20%;
     position: relative;
     margin: auto;
     font-size: 20px;
@@ -170,7 +176,7 @@ div.page-nav {
     position: absolute;
     background-color: white;
     top: 70px;
-    right: 95px;
+    right: 35px;
     width: 95px;
     padding: 5px 0px;
     text-align: center;

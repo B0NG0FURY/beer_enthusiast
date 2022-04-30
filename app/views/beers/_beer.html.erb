@@ -1,4 +1,4 @@
-<li class="info-card">
+<li class="info-item">
     <h2><strong><%= link_to beer.name, beer_path(beer) %></strong></h2>
     <% if !@brewery %>
         <p>Brewed by: <%= link_to beer.brewery.name, brewery_path(beer.brewery) %></p>
