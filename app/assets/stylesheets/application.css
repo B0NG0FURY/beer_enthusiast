@@ -156,7 +156,14 @@ div.info-list li p {
 }
 
 div.page-nav {
-    margin: 5px 0px 0px 120px;
+    width: 30%;
+}
+
+.pagination {
+    width: 30%;
+    position: relative;
+    margin: auto;
+    font-size: 20px;
 }
 
 .rating {
