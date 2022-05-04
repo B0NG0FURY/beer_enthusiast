@@ -286,6 +286,10 @@ div.google-signin a img {
     margin-left: -11px;
 }
 
-.welcome {
+.welcome h1 {
     font-family: 'Merriweather', serif;
+}
+
+.welcome p {
+    font-family: 'Archivo', sans-serif;
 }
