@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:index, :new, :edit], concerns: :paginatable
   end
   resources :breweries, only: [:index, :show], concerns: :paginatable
+  get '/breweries/locator', to: 'breweries#locator'
   resources :users, only: [:show, :create] do
     get '/beers/top10', to: 'beers#top10'
     get '/beers/strongest', to: 'beers#strongest'

@@ -19,4 +19,7 @@ class BreweriesController < ApplicationController
             @beers = @brewery.beers
         end
     end
+
+    def locator
+    end
 end
