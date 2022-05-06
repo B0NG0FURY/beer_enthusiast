@@ -14,12 +14,12 @@ Rails.application.routes.draw do
   get '/beers/top10', to: 'beers#top10'
   get '/beers/strongest', to: 'beers#strongest'
   get '/beers/search', to: 'beers#search'
+  get '/breweries/locator', to: 'breweries#locator'
   resources :beers, only: [:index, :show, :new, :create] do
     concerns :paginatable
     resources :reviews, only: [:index, :new, :edit], concerns: :paginatable
   end
   resources :breweries, only: [:index, :show], concerns: :paginatable
-  get '/breweries/locator', to: 'breweries#locator'
   resources :users, only: [:show, :create] do
     get '/beers/top10', to: 'beers#top10'
     get '/beers/strongest', to: 'beers#strongest'
