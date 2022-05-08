@@ -1,11 +1,13 @@
-<h2>Brewery Locator</h2>
+<div class="form">
+    <h2>Brewery Locator</h2>
 
-<%= form_with url: "/breweries/locator/results", method: :get do |form| %>
-    <%= form.label :type, "Location Type" %><br>
-    <%= form.select :type, ["City, State", "Zip Code"] %><br><br>
+    <%= form_with url: "/breweries/locator/results", method: :get do |form| %>
+        <%= form.label :type, "Location Type" %><br>
+        <%= form.select :type, ["City, State", "Zip Code"] %><br><br>
 
-    <%= form.label :location, "Location" %><br>
-    <%= form.text_field :location %><br><br>
+        <%= form.label :location, "Location" %><br>
+        <%= form.text_field :location %><br><br>
 
-    <%= form.submit "Search" %>
-<% end %>
+        <%= form.submit "Search" %>
+    <% end %>
+</div>
