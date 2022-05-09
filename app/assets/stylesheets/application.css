@@ -323,3 +323,15 @@ div.google-signin a img {
     width: 50%;
     padding: 6px 12px;
 }
+
+.new-beer h2 {
+    margin: 10px 0px 15px 90px;
+}
+
+.new-beer form {
+    margin-left: 90px;
+}
+
+.new-beer input {
+    padding: 1px 4px;
+}

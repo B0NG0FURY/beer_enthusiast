@@ -1,42 +1,44 @@
-<h1>Add a Beer</h1>
+<div class="form new-beer">  
+    <h2>Add a Beer</h2>
 
-<%= render partial: 'users/error', locals: {model: @beer} %>
+    <%= render partial: 'users/error', locals: {model: @beer} %>
 
-<%= form_for @beer do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %><br><br>
+    <%= form_for @beer do |f| %>
+        <%= f.label :name %>
+        <%= f.text_field :name %><br><br>
 
-    <%= f.fields_for :style do |s| %>
-        <%= s.label :style %>
-        <%= s.select :id, Style.all.map {|s| [ s.name, s.id ] }, include_blank: true %><br><br>
+        <%= f.fields_for :style do |s| %>
+            <%= s.label :style %>
+            <%= s.select :id, Style.all.map {|s| [ s.name, s.id ] }, include_blank: true %><br><br>
 
-        <%= s.label :style, "New Style" %>
-        <%= s.text_field :name %><br><br>
-    <% end %>
+            <%= s.label :style, "New Style" %>
+            <%= s.text_field :name %><br><br>
+        <% end %>
 
-    <%= f.label :abv %>
-    <%= f.number_field :abv, step: :any %><br><br>
+        <%= f.label :abv %>
+        <%= f.number_field :abv, step: :any %><br><br>
 
-    <%= f.label :ibu %>
-    <%= f.number_field :ibu %><br><br>
+        <%= f.label :ibu %>
+        <%= f.number_field :ibu %><br><br>
 
-    <%= f.fields_for :brewery do |b| %>
-        <%= b.label :name, "Brewery Name" %>
-        <%= b.text_field :name %><br><br>
+        <%= f.fields_for :brewery do |b| %>
+            <%= b.label :name, "Brewery Name" %>
+            <%= b.text_field :name %><br><br>
         
-        <%= b.label :location, "Brewery Location" %>
-        <%= b.text_field :location %><br><br>
+            <%= b.label :location, "Brewery Location" %>
+            <%= b.text_field :location %><br><br>
+        <% end %>
+    
+        <%= f.fields_for :reviews do |r| %>
+            <%= r.hidden_field :user_id, value: @user.id %>
+    
+            <%= r.label :rating, "Rating (0-100)" %>
+            <%= r.number_field :rating, min: 0, max: 100 %><br><br>
+    
+            <%= r.label :comment %>
+            <%= r.text_area :comment %><br><br>
+        <% end %>
+    
+        <%= f.submit "Add Beer" %>
     <% end %>
-    
-    <%= f.fields_for :reviews do |r| %>
-        <%= r.hidden_field :user_id, value: @user.id %>
-    
-        <%= r.label :rating, "Rating (0-100)" %>
-        <%= r.number_field :rating, min: 0, max: 100 %><br><br>
-    
-        <%= r.label :comment %>
-        <%= r.text_area :comment %><br><br>
-    <% end %>
-    
-    <%= f.submit "Add Beer" %>
-<% end %>
+</div>
