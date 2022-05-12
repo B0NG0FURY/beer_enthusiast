@@ -335,3 +335,11 @@ div.google-signin a img {
 .new-beer input {
     padding: 1px 4px;
 }
+
+.brewery-results {
+    width: 30%;
+    height: 80%;
+    float: left;
+    border: 1px solid black;
+    margin: 20px 15px 0px 20px;
+}
