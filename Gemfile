@@ -63,3 +63,6 @@ gem 'omniauth-rails_csrf_protection'
 
 # Paginator
 gem 'kaminari'
+
+# HTTP Client
+gem 'excon'
