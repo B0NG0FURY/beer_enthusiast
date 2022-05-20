@@ -1,6 +1,15 @@
 <div class="map-container">
+    <h2>Breweries in <%= @location.capitalize %></h2>
     <div class="brewery-results">
+        <ol class="brewery-result-list">
+            <% @breweries.each do |brewery| %>
+                <li class="brewery-result-item">
+                    <h4><%= brewery["name"] %></h4>
+                    <p><%= brewery["street"] %></p>
+                </li>
+            <% end %>
+        </ol>
     </div>
-    <div id="map" data-attribute="<%= @result %>"></div>
+    <div id="map" data-location="<%= @location %>"></div>
     <%= javascript_pack_tag 'map' %>
 </div>

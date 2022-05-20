@@ -1,14 +1,17 @@
 class MapController < ApplicationController
     def results
         api = "https://api.openbrewerydb.org/breweries"
-        @location = params[:location].downcase
+        if params[:location]
+            @location = params[:location].downcase
+        end
         
         if params[:type] == "City"
-            @breweries = Excon.get("#{api}?by_city=#{@location}")
-            puts @breweries.body
+            response = Excon.new("#{api}?by_city=#{@location}")
+            response = response.get(:headers => {'Accept' => 'application/json'})
         else
-            @breweries = Excon.get("#{api}?by_postal=#{@location}")
-            puts @breweries.body
+            response = Excon.new("#{api}?by_postal=#{@location}")
+            response = response.get(:headers => {'Accept' => 'application/json'})
         end
+        @breweries = JSON.parse(response.body)
     end
 end
