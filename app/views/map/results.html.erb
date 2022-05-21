@@ -3,7 +3,11 @@
     <div class="brewery-results">
         <ol class="brewery-result-list">
             <% @breweries.each do |brewery| %>
-                <li class="brewery-result-item">
+                <li 
+                    class="brewery-result-item"
+                    data-latitude=<%= brewery["latitude"] %>
+                    data-longitude=<%= brewery["longitude"] %>
+                >
                     <h4><%= brewery["name"] %></h4>
                     <p><%= brewery["street"] %></p>
                 </li>

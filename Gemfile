@@ -66,3 +66,6 @@ gem 'kaminari'
 
 # HTTP Client
 gem 'excon'
+
+# Geocoding
+gem 'geocoder'

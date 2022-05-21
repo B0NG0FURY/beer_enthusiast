@@ -338,10 +338,11 @@ div.google-signin a img {
 
 .brewery-results {
     width: 30%;
-    height: 80%;
+    max-height: 420px;
+    overflow: scroll;
     float: left;
     border: 1px solid black;
-    margin: 20px 15px 0px 20px;
+    margin: 0px 15px 0px 20px;
 }
 
 #map {

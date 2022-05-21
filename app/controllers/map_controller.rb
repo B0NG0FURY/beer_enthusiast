@@ -14,5 +14,15 @@ class MapController < ApplicationController
         end
         response = response.get(:headers => {'Accept' => 'application/json'})
         @breweries = JSON.parse(response.body)
+        @breweries = @breweries.map do |brewery|
+            if brewery["longitude"] == nil || brewery["latitude"] == nil
+                location = Geocoder.search("#{brewery["street"]}, #{brewery["city"]}")
+                brewery["longitude"] = location.first.longitude.to_s
+                brewery["latitude"] = location.first.latitude.to_s
+                brewery
+            else
+                brewery
+            end
+        end
     end
 end
