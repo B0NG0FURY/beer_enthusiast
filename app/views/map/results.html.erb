@@ -15,5 +15,7 @@
         </ol>
     </div>
     <div id="map" data-location="<%= @location %>"></div>
-    <%= javascript_pack_tag 'map' %>
 </div>
+<%= javascript_pack_tag 'map' %>
+<%= javascript_include_tag "http://example.com" %>
+<script>initMap()</script>

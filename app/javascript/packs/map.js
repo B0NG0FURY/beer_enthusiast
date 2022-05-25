@@ -1,15 +1,18 @@
 function initMap() {
     let div = document.getElementById("map");
-    let location = div.getAttribute("data-location");
-    let results = document.querySelector("results-list");
-    let coords = results.map(element => {
+    let location = {
+        lat: div.getAttribute("data-center-lat"),
+        lng: div.getAttribute("data-center-lng")
+    }
+    let breweries = document.querySelectorAll("li.brewery-result-item");
+    breweries = Array.from(breweries);
+    let coords = breweries.map(brewery => {
         return {
-            lat: element.getAttribute("data-lat"),
-            lng: element.getAttribute("data-lng")
+            lat: brewery.getAttribute("data-latitude"),
+            lng: brewery.getAttribute("data-longitude")
         }
     });
+    console.log(coords);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    initMap();
-});
+window.initMap = initMap;
