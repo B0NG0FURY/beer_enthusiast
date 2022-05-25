@@ -12,6 +12,7 @@ class MapController < ApplicationController
         else
             response = Excon.new("#{api}?by_postal=#{searchable_location}")
         end
+
         response = response.get(:headers => {'Accept' => 'application/json'})
         @breweries = JSON.parse(response.body)
         @breweries = @breweries.map do |brewery|
@@ -24,5 +25,9 @@ class MapController < ApplicationController
                 brewery
             end
         end
+
+        location_coords = Geocoder.search("#{@location}, #{@breweries.first["state"]}")
+        @location_lat = location_coords.first.latitude.to_s
+        @location_lng = location_coords.first.longitude.to_s
     end
 end
