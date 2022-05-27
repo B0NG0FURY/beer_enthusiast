@@ -14,8 +14,16 @@
             <% end %>
         </ol>
     </div>
-    <div id="map" data-location="<%= @location %>"></div>
+    <div 
+        id="map" 
+        data-location="<%= @location %>"
+        data-center-lat="<%= @location_lat %>"
+        data-center-lng="<%= @location_lng %>"
+    >
+    </div>
 </div>
 <%= javascript_pack_tag 'map' %>
-<%= javascript_include_tag "http://example.com" %>
-<script>initMap()</script>
+<%= 
+    javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS_KEY']}&callback=initMap",
+    defer: true
+%>

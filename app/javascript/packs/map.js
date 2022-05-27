@@ -1,12 +1,12 @@
 function initMap() {
     let div = document.getElementById("map");
     let location = {
-        lat: div.getAttribute("data-center-lat"),
-        lng: div.getAttribute("data-center-lng")
+        lat: parseFloat(div.getAttribute("data-center-lat")),
+        lng: parseFloat(div.getAttribute("data-center-lng"))
     }
 
     const map = new google.maps.Map(div, {
-        zoom: 10,
+        zoom: 11,
         center: location
     });
 
@@ -14,8 +14,8 @@ function initMap() {
     breweries = Array.from(breweries);
     let coords = breweries.map(brewery => {
         return {
-            lat: brewery.getAttribute("data-latitude"),
-            lng: brewery.getAttribute("data-longitude")
+            lat: parseFloat(brewery.getAttribute("data-latitude")),
+            lng: parseFloat(brewery.getAttribute("data-longitude"))
         }
     });
 
