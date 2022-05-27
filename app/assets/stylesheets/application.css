@@ -336,10 +336,14 @@ div.google-signin a img {
     padding: 1px 4px;
 }
 
+.map-container h2 {
+    margin-left: 18px;
+}
+
 .brewery-results {
     width: 30%;
     max-height: 420px;
-    overflow: scroll;
+    overflow: auto;
     float: left;
     border: 1px solid black;
     margin: 0px 15px 0px 20px;
