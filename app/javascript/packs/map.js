@@ -6,7 +6,7 @@ function initMap() {
     }
 
     const map = new google.maps.Map(div, {
-        zoom: 11,
+        zoom: 12,
         center: location
     });
 
@@ -19,10 +19,11 @@ function initMap() {
         }
     });
 
-    coords.forEach(position => {
+    coords.forEach((position, i) => {
         const marker = new google.maps.Marker({
             position: position,
-            map: map
+            map: map,
+            label: (i + 1).toString()
         });
     });
     console.log(coords);
