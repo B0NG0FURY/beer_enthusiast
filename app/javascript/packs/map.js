@@ -12,21 +12,25 @@ function initMap() {
 
     let breweries = document.querySelectorAll("li.brewery-result-item");
     breweries = Array.from(breweries);
-    let coords = breweries.map(brewery => {
+    let breweryInfo = breweries.map(brewery => {
         return {
-            lat: parseFloat(brewery.getAttribute("data-latitude")),
-            lng: parseFloat(brewery.getAttribute("data-longitude"))
+            coords: {
+                lat: parseFloat(brewery.getAttribute("data-latitude")),
+                lng: parseFloat(brewery.getAttribute("data-longitude"))
+            },
+            title: brewery.children[0].innerText
         }
     });
 
-    coords.forEach((position, i) => {
+    breweryInfo.forEach((brewery, i) => {
         const marker = new google.maps.Marker({
-            position: position,
+            position: brewery.coords,
             map: map,
-            label: (i + 1).toString()
+            label: (i + 1).toString(),
+            title: brewery.title
         });
     });
-    console.log(coords);
+    console.log(breweryInfo);
 }
 
 window.initMap = initMap;
