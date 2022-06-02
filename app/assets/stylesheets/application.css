@@ -337,7 +337,7 @@ div.google-signin a img {
 }
 
 .map-container h2 {
-    margin-left: 18px;
+    margin-left: 68px;
 }
 
 .brewery-results {
@@ -345,8 +345,8 @@ div.google-signin a img {
     max-height: 420px;
     overflow: auto;
     float: left;
-    border: 1px solid black;
-    margin: 0px 15px 0px 20px;
+    border: 2px solid black;
+    margin: 0px 15px 0px 70px;
 }
 
 #map {
