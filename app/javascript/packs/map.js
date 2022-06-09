@@ -22,6 +22,8 @@ function initMap() {
         }
     });
 
+    let infoWindow = new google.maps.InfoWindow();
+
     breweryInfo.forEach((brewery, i) => {
         const marker = new google.maps.Marker({
             position: brewery.coords,
@@ -29,7 +31,14 @@ function initMap() {
             label: (i + 1).toString(),
             title: brewery.title
         });
+
+        marker.addListener("click", () => {
+            infoWindow.close();
+            infoWindow.setContent(marker.getTitle());
+            infoWindow.open(marker.getMap(), marker);
+        });
     });
+
     console.log(breweryInfo);
 }
 
