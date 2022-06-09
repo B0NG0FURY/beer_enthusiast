@@ -8,7 +8,13 @@
                     data-latitude=<%= brewery["latitude"] %>
                     data-longitude=<%= brewery["longitude"] %>
                 >
-                    <h4><%= brewery["name"] %></h4>
+                    <% if brewery["website_url"] != nil %>
+                        <h4>
+                            <%= link_to brewery["name"], brewery["website_url"], target: :_blank %>
+                        </h4>
+                    <% else %>
+                        <h4><%= brewery["name"] %></h4>
+                    <% end %>
                     <p><%= brewery["street"] %></p>
                 </li>
             <% end %>
