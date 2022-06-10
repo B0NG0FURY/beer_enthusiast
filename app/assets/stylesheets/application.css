@@ -336,6 +336,17 @@ div.google-signin a img {
     padding: 1px 4px;
 }
 
+.locator-form select {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: dodgerblue;
+    border: none;
+}
+
+.locator-form input {
+    font-size: 16px;
+}
+
 .map-container h2 {
     margin-left: 68px;
 }

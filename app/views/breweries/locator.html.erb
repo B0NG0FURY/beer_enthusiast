@@ -1,7 +1,7 @@
 <div class="form">
     <h2>Brewery Locator</h2>
 
-    <%= form_with url: "/breweries/locator/results", method: :get do |form| %>
+    <%= form_with url: "/breweries/locator/results", method: :get, html: {class: "locator-form"} do |form| %>
         <%= form.label :type, "Location Type" %><br>
         <%= form.select :type, ["City", "Zip Code"] %><br><br>
 
