@@ -338,13 +338,25 @@ div.google-signin a img {
 
 .locator-form select {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: bold;
     background-color: dodgerblue;
     border: none;
 }
 
 .locator-form input {
     font-size: 16px;
+}
+
+#location-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+#locator-search {
+    background-color: green;
+    font-weight: bolder;
+    width: 200px;
 }
 
 .map-container h2 {

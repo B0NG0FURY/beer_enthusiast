@@ -6,8 +6,8 @@
         <%= form.select :type, ["City", "Zip Code"] %><br><br>
 
         <%= form.label :location, "Location" %><br>
-        <%= form.text_field :location %><br><br>
+        <%= form.text_field :location, id: "location-text" %><br><br>
 
-        <%= form.submit "Search" %>
+        <%= form.submit "Search", id: "locator-search" %>
     <% end %>
 </div>
