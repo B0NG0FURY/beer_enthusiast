@@ -18,7 +18,8 @@ function initMap() {
                 lat: parseFloat(brewery.getAttribute("data-latitude")),
                 lng: parseFloat(brewery.getAttribute("data-longitude"))
             },
-            title: brewery.children[0].innerText
+            title: brewery.children[0].innerText,
+            address: brewery.getAttribute("data-address")
         }
     });
 
@@ -29,7 +30,7 @@ function initMap() {
             position: brewery.coords,
             map: map,
             label: (i + 1).toString(),
-            title: brewery.title
+            title: `${brewery.title} \n ${brewery.address.split("-").join(" ")}`
         });
 
         marker.addListener("click", () => {

@@ -7,6 +7,7 @@
                     class="brewery-result-item"
                     data-latitude=<%= brewery["latitude"] %>
                     data-longitude=<%= brewery["longitude"] %>
+                    data-address=<%= brewery["street"].split(" ").join("-") %>
                 >
                     <% if brewery["website_url"] != nil %>
                         <h4>
