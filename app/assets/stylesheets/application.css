@@ -361,6 +361,7 @@ div.google-signin a img {
 
 .map-container h2 {
     margin-left: 68px;
+    text-decoration: underline;
 }
 
 .brewery-results {
@@ -393,4 +394,5 @@ div.google-signin a img {
     height: 420px;
     float: right;
     margin-right: 75px;
+    border: 1.5px solid black;
 }
