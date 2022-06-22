@@ -188,7 +188,9 @@ div.page-nav {
 } */
 
 .info-item.brewery-list {
-    width: 320px;
+    width: 380px;
+    border-bottom: 1px solid black;
+    margin-left: 110px;
 }
 
 .info-item.brewery-list h2 {
