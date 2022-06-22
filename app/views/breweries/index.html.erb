@@ -17,7 +17,9 @@
                     <% end %>
                     <br>
                     <p><%= brewery.location %></p>
-                    <p class="brewery-rating">Avg. Rating: <%= brewery.average_rating_all_beers %></p>
+                    <p class="brewery-rating">
+                        Avg. Rating: <strong><%= brewery.average_rating_all_beers %></strong>
+                    </p>
                 </li>
             <% end %>
         </ul>
