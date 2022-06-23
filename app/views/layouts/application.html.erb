@@ -40,6 +40,9 @@
             <%= link_to "Strongest", beers_strongest_path %>
           </li>
           <li>
+            <%= link_to "Brewery Locator", breweries_locator_path %>
+          </li>
+          <li>
             <%= form_tag("/beers/search", method: "get") do %>
               <%= text_field_tag(:q, nil, placeholder: "Search Beers") %>
               <%= submit_tag("Search") %>
